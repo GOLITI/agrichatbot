@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assistant Agricole</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-bar">
+    <h1>Assistant Agricole</h1>
+  </div>
+
+  <main>
+    <div class="chat-area" id="chat-area">
+      <div class="welcome-message" id="welcome-message">
+        <div class="welcome-icon">
+          <i class="material-icons">eco</i>
+        </div>
+        <div class="welcome-title">Bienvenue sur l'Assistant Agricole</div>
+        <div class="welcome-subtitle">Je peux vous aider avec des informations sur vos cultures, des conseils agricoles, et l'analyse des données de vos parcelles.</div>
+        <div class="welcome-hint">Posez-moi une question pour commencer !</div>
+      </div>
+    </div>
+
+    <div class="typing-indicator hidden" id="typing-indicator">
+      <div class="dot">
+        <svg width="16" height="16" viewBox="0 0 16 16">
+          <circle cx="8" cy="8" r="7" fill="none" stroke="#4CAF50" stroke-width="2">
+            <animate attributeName="stroke-dasharray" from="0 44" to="44 0" dur="1s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+      </div>
+      <span>Assistant est en train d'écrire...</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <form>
+      <div class="image-picker">
+        <div class="image-toggle">
+          <input type="checkbox" id="use-image-checkbox">
+          <label for="use-image-checkbox">Inclure une image avec la question</label>
+        </div>
+        <!-- Le reste de votre sélecteur d'images -->
+      </div>
+      <div class="input-area">
+        <input type="text" class="input-field" name="prompt" placeholder="Posez votre question...">
+        <button type="submit" class="send-button">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </form>
+    <div class="output" id="output-area">(Les résultats apparaîtront ici)</div>
+  </main>
+
+  <script src="https://unpkg.com/markdown-it@8.4.2/dist/markdown-it.min.js"></script>
+  <script src="https://unpkg.com/base64-js@1.3.0/base64js.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
